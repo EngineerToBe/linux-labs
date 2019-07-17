@@ -1,0 +1,40 @@
+#+TITLE: What is Process?
+
+The definition of Process is very simple its the *running* *a* *program* . Program is nothing but a set of instruction to be excuted.
+To understand what constitutes a process, we thus have to understand its machine state: what a program can read or update when it is running.
+At any given time, what parts of the machine are important to the execu-
+tion of this program?
+One obvious component of machine state that comprises a process is its memory. Instructions lie in memory; the data that the running pro-gram reads and writes sits in memory as well. Thus the memory that the
+process can address (called its address space) is part of the process.
+Also part of the process’s machine state are registers; many instructions explicitly read or update registers and thus clearly they are important to
+the execution of the process.
+
+
+* Process Creation
+
+  Operating System loads the program into memory and the address space to execute the program and create a process. Intially a program can resides in the Hard Disk or
+  some flash disk. Operating System reads those bytes and lods into memory somewhere. Once the program loaded into the memore Operating System allocate some meory to the
+  program and is is known as Stack. Once it is done the OS now executes the program.
+
+* Process States
+
+  There are 3 states a *Process* can be in
+
+  - running
+    Process is running and executing the instructions.
+  - ready
+    Process is ready to run, but for some reason OS not to run at a given moment.
+  - block
+    Porcess is blocked for some other reason.
+
+* System Calls
+
+  - fork()
+    When a Program runs its gets its PID (Process Identifier), the process calls the fork() with which a new process is created. This porcess is the exact copy of the original
+    process, the new process is child process and its exists as the older process calls the System Call fork().
+
+  - wait()
+    This is useful when the child process is still running, the parent process calls the wait() system call until the child process dont finish.
+
+  - exec()
+    This syetem call is use when some other process needs to be executed in the parent process.
